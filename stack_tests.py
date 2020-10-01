@@ -63,7 +63,10 @@ class TestLab2(unittest.TestCase):
             stack.peek()
         self.assertEqual(x, stack)
 
-
+    def test_None(self):
+        stack = Stack(2)
+        stack.push(None)
+        self.assertEqual(stack.peek(), None)
 
 
 if __name__ == '__main__': 
