@@ -3,7 +3,7 @@ import unittest
 # Use the imports below to test either your array-based stack
 # or your link-based version
 from stack_array import Stack
-#from stack_linked import Stack
+from stack_linked import Stack
 
 class TestLab2(unittest.TestCase):
     def test_simple(self):
@@ -32,6 +32,18 @@ class TestLab2(unittest.TestCase):
         stack = Stack(1)
         stack.push(1)
         self.assertEqual(stack.size(), 1)
+
+    def test_push(self):
+        stack = Stack(1)
+        stack.push(1)
+        self.assertTrue(stack.peek(), 1)
+
+    def test_pop(self):
+        stack = Stack(2)
+        stack.push(1)
+        stack.push(2)
+        stack.pop()
+        self.assertTrue(stack.peek(), 1)
 
     def test_push_error(self):
         stack = Stack(1)
